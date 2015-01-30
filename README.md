@@ -77,17 +77,21 @@ Recipes
 default
 -------
 
-The default recipe install the awslog client and sets up the logging for the specified log files.
+The default recipe installs the awslog client and sets up the logging for the specified log files.
 
 Attributes
 ==========
 
-TODO...
+`default['awslogs']['region'] = 'us-east-1`
+This must be set to your designated AWS region
 
+`default['awslogs']['date_time_format'] = '%b %d %H:%M:%S'`
+Date time format to be used for logging
 
+`default['awslogs']['buffer_duration'] = 5000`
+`default['awslogs']['initial_position'] = 'start_of_file'`
+Logging settings for the awslog client
 
-TODO
-====
 
 
 
@@ -97,7 +101,7 @@ License and Author
 
 * Author:: Dan Herman (<dherman@intratechs.com>)
 
-(c) 2014, Dan Herman <dherman@intratechs.com>
+(c) 2015, Dan Herman <dherman@intratechs.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

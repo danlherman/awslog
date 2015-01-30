@@ -7,11 +7,11 @@ node['awslogs'][layer]['logs'].each do | filepath |
 %>
 
 [<%= filepath %>]
-datetime_format = %b %d %H:%M:%S
+datetime_format = <%= node['awslogs']['date_time_format'] %>
 file = <%= filepath %>
-buffer_duration = 5000
+buffer_duration = <%= node['awslogs']['buffer_duration'] %>
 log_stream_name = {hostname}-{instance_id}
-initial_position = start_of_file
+initial_position = <%= node['awslogs']['initial_position'] %>
 log_group_name = <%= node['awslogs']['environment'] + '_' + File.basename(filepath) %>
 
 <% end %>
