@@ -1,9 +1,9 @@
 [general]
-state_file = <%= state_path %>
+state_file = <%= @state_path %>/agent-state
 
-<% 
+<%
 layer = node["opsworks"]["instance"]["layers"][0]
-node['awslogs'][layer]['logs'].each do | filepath | 
+node['awslogs'][layer]['logs'].each do | filepath |
 %>
 
 [<%= filepath %>]
