@@ -1,0 +1,6 @@
+[plugins]
+cwlogs = cwlogs
+[default]
+region = us-east-1
+aws_access_key_id =<%= node['awslogs']['aws_access_key_id'] %>
+aws_secret_access_key =<%= node['awslogs']['aws_secret_access_key'] %>

@@ -1,0 +1,11 @@
+<% node['awslogs']['logs'].each do | log | %>
+
+[<%= log['filepath'] %>]
+datetime_format = %b %d %H:%M:%S
+file = log['filepath']
+buffer_duration = 5000
+log_stream_name = {hostname}-{instance_id}
+initial_position = start_of_file
+log_group_name = <%= log['environment'] + '_' + log['logname'] %>
+
+<% end %>
