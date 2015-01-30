@@ -12,7 +12,7 @@ AWS Credentials
 The default recipe will look for a data bag defined by node['awslogs']['aws_access_key_id']  and node['awslogs']['aws_secret_access_key']. These credentials should be for a user with the minimum access to be able to add logs to cloudwatch. 
 
 Example policy for awslog user:
-
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -27,6 +27,7 @@ Example policy for awslog user:
     }
   ]
 }
+```
 
 See http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/QuickStartEC2Instance.html for more information.
 
@@ -67,7 +68,7 @@ E.G.
    }
 }
 
-
+```
    
 
 Recipes
@@ -88,8 +89,7 @@ TODO...
 TODO
 ====
 
-* Egress rules
-* Apply security groups to instances, elbs, vpcs, etc
+
 
 
 License and Author
